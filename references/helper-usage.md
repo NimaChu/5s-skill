@@ -1,6 +1,26 @@
 # 通用辅助脚本
 
-`scripts/workspace_5s.py`仅依赖Python 3.11+标准库。替换下面的SKILL_DIR与PROJECT为实际绝对路径，清单写入项目已有的维护／验证目录。脚本不推断垃圾、不自动查进程、不停服务、不配置定时任务。
+`scripts/workspace_5s.py`仅依赖Python 3.11+标准库。替换下面的SKILL_DIR与PROJECT为实际绝对路径，清单写入项目已有的维护／验证目录。脚本不推断垃圾、不自动查进程、不停服务、不配置定时任务。所有示例中的 python 表示已核对版本的解释器，按环境替换为 python3 或 py -3；SKILL_DIR 来自实际加载的技能位置，与 PROJECT 不同。
+
+带空格路径的调用示例（先将变量替换成实际位置）：
+
+PowerShell：
+
+```powershell
+$skillDir = 'C:/path with spaces/skills/5s'
+$projectDir = 'D:/path with spaces/project'
+python "$skillDir/scripts/workspace_5s.py" inventory "$projectDir"
+```
+
+POSIX shell：
+
+```sh
+skill_dir='/path with spaces/skills/5s'
+project_dir='/path with spaces/project'
+python3 "$skill_dir/scripts/workspace_5s.py" inventory "$project_dir"
+```
+
+命令可从任何工作目录运行。下面的 PROJECT/artifacts/maintenance/5s 仅为示例，实际输出沿用项目约定。
 
 ## 盘点（只读）
 
